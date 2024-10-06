@@ -5,6 +5,17 @@ function RSVPForm() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const {data, error} = await supabase.from('rsvps').inset([{name, email}]);
+    if (error) {
+        console.error(error);
+      } else {
+        setMessage('Thank you for RSVPing! See you there!')
+    }
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       <div>
