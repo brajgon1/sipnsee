@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 4005;
 // controllers
 const handleRSVP = require('./rsvpController')
 
+// middleware
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.json());
