@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from 'axios'
+import './RSVP.css'
 
 function RSVPForm() {
   const [name, setName] = useState("");
@@ -27,9 +28,9 @@ function RSVPForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Name:</label>
+    <form className="form" onSubmit={handleSubmit}>
+      <div className="name-div">
+        <label className="name">Name </label>
         <input
           type="text"
           value={name}
@@ -37,8 +38,8 @@ function RSVPForm() {
           required
         />
       </div>
-      <div>
-        <label>Email:</label>
+      <div className="email-div">
+        <label className='email'>Email </label>
         <input
           type="email"
           value={email}
