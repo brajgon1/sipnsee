@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from 'axios'
 
 function RSVPForm() {
   const [name, setName] = useState("");
@@ -6,15 +7,24 @@ function RSVPForm() {
   const [message, setMessage] = useState("");
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
 
-    const {data, error} = await supabase.from('rsvps').inset([{name, email}]);
-    if (error) {
-        console.error(error);
+    try {
+      const response = await axios.post('http://localhost:4005/rsvp', {
+        name: name,
+        email: email,
+      });
+
+      if (response.status === 201) {
+        setMessage(response.data.message); 
       } else {
-        setMessage('Thank you for RSVPing! See you there!')
+        setMessage("Something went wrong with your RSVP.");
+      }
+    } catch (error) {
+      console.error("Error submitting RSVP:", error);
+      setMessage("Failed to send RSVP. Please try again later.");
     }
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit}>
