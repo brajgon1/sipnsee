@@ -29,19 +29,20 @@ function RSVPForm() {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <div className="name-div">
-        <label className="name">Name </label>
+      <div>
         <input
           type="text"
+          placeholder="Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
         />
       </div>
-      <div className="email-div">
-        <label className='email'>Email </label>
+      <div>
         <input
           type="email"
+          placeholder="Email"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
