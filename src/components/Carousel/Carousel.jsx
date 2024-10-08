@@ -1,35 +1,26 @@
 import { Carousel, Button } from "react-bootstrap";
-import img1 from "./assets/B&m-617.jpg"
+import "./Carousel.css"
+
+// need to figure out how to get photos to appear in the carousel
+// add photos to the file for the carousel
 
 function CarouselComponent({ onProceed }) {
   return (
-    <div>
-      <Carousel>
+    <div className="carousel-container">
+      <Carousel className="carousel">
         <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={img1}
-            alt="First slide"
-          />
+          <img src="https://via.placeholder.com/800x400" alt="First slide" />
         </Carousel.Item>
 
         <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://via.placeholder.com/800x400"
-            alt="Second slide"
-          />
+          <img src="https://via.placeholder.com/800x400" alt="Second slide" />
         </Carousel.Item>
 
         <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://via.placeholder.com/800x400"
-            alt="Third slide"
-          />
+          <img src="https://via.placeholder.com/800x400" alt="Third slide" />
         </Carousel.Item>
       </Carousel>
-      <Button variant="primary" className="mt-4" onClick={onProceed}>
+      <Button variant="primary" className="carousel-button" onClick={onProceed}>
         Next
       </Button>
     </div>

@@ -3,6 +3,9 @@ import './App.css';
 import CarouselComponent from './components/Carousel/Carousel';
 import RSVPForm from './components/RSVP/RSVP';
 
+// double check code to see how to correctly show the carousel first and then take user to the form
+
+
 function App() {
 
   const [step, setStep] = useState('carousel');
