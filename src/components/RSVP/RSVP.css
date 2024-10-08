@@ -1,3 +1,20 @@
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    /* background-color: #F6EADB; */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
 button {
     color: #383430;
     border-radius: 5px; 
@@ -36,4 +53,20 @@ input {
     font-size: 14px; 
 }
 
+@media (max-width: 600px) {
+    .form {
+        width: 90%; 
+        padding: 20px; 
+    }
 
+    input {
+        font-size: 12px; 
+        padding: 6px; 
+    }
+
+    button {
+        width: 100%; 
+        padding: 10px; 
+        font-size: 14px; 
+    }
+}
