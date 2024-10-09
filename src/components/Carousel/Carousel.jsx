@@ -1,5 +1,6 @@
 import { Carousel, Button } from "react-bootstrap";
 import "./Carousel.css"
+import Header from "../Header/Header";
 
 // need to figure out how to get photos to appear in the carousel
 // add photos to the file for the carousel
@@ -7,6 +8,7 @@ import "./Carousel.css"
 function CarouselComponent({ onProceed }) {
   return (
     <div className="carousel-container">
+      <Header/>
       <Carousel className="carousel">
         <Carousel.Item>
           <img src="https://via.placeholder.com/800x400" alt="First slide" />

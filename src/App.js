@@ -20,7 +20,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="background">
       {step === 'carousel' && <CarouselComponent onProceed={handleProceed} />}
       {step === 'form' && <RSVPForm onProceed={handleSuccess} />}
       {step === 'success' && (
