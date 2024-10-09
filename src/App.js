@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import CarouselComponent from './components/Carousel/Carousel';
 import RSVPForm from './components/RSVP/RSVP';
