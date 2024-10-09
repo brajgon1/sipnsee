@@ -7,7 +7,7 @@ export default function Header() {
       <div class="invitation-details">
         November 2, 2024
         <br />
-        TBD
+        2:30 PM to 4:30 PM
         <br />
         4544 W. Harvest Moon Dr. South Jordan, UT 84009
         <br />

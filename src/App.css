@@ -43,12 +43,20 @@
 
 
 .background {
-  background-image: url('https://thumbs.dreamstime.com/b/autumn-themed-frame-pumpkins-dry-leaves-fall-decoration-border-around-blank-paper-copy-space-mockup-concept-autumn-316207132.jpg');
+  background-image: url('https://img.freepik.com/premium-photo/autumn-background-with-pumpkins-leaves-wooden-floor-thanksgiving-background-theme_985774-1184.jpg');
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
   height: 100vh; 
   width: 100vw; 
+}
+
+@media (max-width: 768px) {
+  .background {
+    background-size: cover; 
+    height: 100vh; 
+    padding: 20px 0; 
+  }
 }
 
 

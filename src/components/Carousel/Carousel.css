@@ -3,7 +3,6 @@
   margin: 0 auto;
   padding: 50px;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 100vh;
@@ -12,10 +11,16 @@
 .carousel img {
   max-height: 400px;
   object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+.carousel {
+  width: 100%;
 }
 
 .carousel-button {
-  margin-top: 20px; /* Adds space between the carousel and the button */
+  margin-top: 20px;
   padding: 10px 20px;
   background-color: #ffc0cb;
   color: white;
@@ -23,6 +28,8 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  max-width: 200px;
+  width: auto !important;
 }
 
 .carousel-button:hover {
@@ -47,7 +54,11 @@
     }
 
     .carousel-button {
-      padding: 8px 16px;
+      padding: 8px 16px; 
+      max-width: 150px; 
+      width: auto; 
+      margin: 0 auto; 
+      display: block; 
     }
   }
 
