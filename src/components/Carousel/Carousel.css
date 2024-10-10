@@ -7,6 +7,8 @@
   justify-content: space-between;
   flex-direction: column;
   height: 100vh;
+  text-align: center;
+  gap: 30px;
 }
 
 .carousel img {
@@ -24,13 +26,28 @@
   background-color: #f8dccf;
 }
 
+@media (min-width: 769px) {
+  .carousel-container {
+    gap: 40px;
+  }
+
+  .form {
+    padding: 30px;
+    max-width: 500px; 
+  }
+
+  .carousel img {
+    max-height: 500px;
+  }
+}
+
 @media (max-width: 768px) {
   .carousel-container {
     max-width: 100%;
     padding: 20px;
     height: auto;
     justify-content: center;
-    align-items: center;
+    gap: 20px;
   }
 
   .carousel {
