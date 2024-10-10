@@ -58,7 +58,7 @@ function RSVPForm({onSubmitSuccess}) {
           <input
             type="number"
             min="1"
-            max="5"
+            max="10"
             value={guestCount}
             onChange={(e) => setGuestCount(e.target.value)}
             required
