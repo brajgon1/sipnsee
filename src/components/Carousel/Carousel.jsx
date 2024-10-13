@@ -23,7 +23,6 @@ function CarouselComponent({ onSubmitSuccess }) {
           <img src={image3} alt="Third slide" />
         </Carousel.Item>
       </Carousel>
-      {/* Pass onSubmitSuccess to RSVPForm */}
       <RSVPForm onSubmitSuccess={onSubmitSuccess} />
     </div>
   );
