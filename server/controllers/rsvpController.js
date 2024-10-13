@@ -2,12 +2,14 @@ const { supabase } = require("../config/supabaseClient");
 
 const handleRSVP = async (req, res) => {
   const { name, email, guest_count } = req.body;
-  console.log(name, email, guest_count);
+  console.log("Received RSVP", name, email, guest_count);
 
   try {
     const { data, error } = await supabase
       .from("rsvps")
       .insert([{ name, email, guest_count }]);
+      console.log("Inserting into rsvps:", { name, email, guest_count });
+
 
     if (error) {
       console.error(error);

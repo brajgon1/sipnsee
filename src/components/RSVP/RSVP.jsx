@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import "./RSVP.css";
 
-function RSVPForm({onSubmitSuccess}) {
+function RSVPForm({ onSubmitSuccess }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -13,13 +13,14 @@ function RSVPForm({onSubmitSuccess}) {
 
     try {
       const response = await axios.post("http://localhost:4005/rsvp", {
-        name: name,
-        email: email,
-        guestCount: guestCount,
+        name,
+        email,
+        guest_count: guestCount,
       });
 
       if (response.status === 201) {
-        const successMessage = response.data.message || "Thank you for RSVPing!";
+        const successMessage =
+          response.data.message || "Thank you for RSVPing!";
         setMessage(successMessage);
         onSubmitSuccess(successMessage);
       } else {
@@ -53,13 +54,12 @@ function RSVPForm({onSubmitSuccess}) {
           />
         </div>
         <div>
-          <label>Number of Guests </label>
           <input
             type="number"
-            min="1"
-            max="10"
             value={guestCount}
-            onChange={(e) => setGuestCount(e.target.value)}
+            onChange={(e) => setGuestCount(Number(e.target.value))}
+            placeholder="Number of guests"
+            min="1"
             required
           />
         </div>
