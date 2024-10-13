@@ -22,7 +22,11 @@ function RSVPForm({ onSubmitSuccess }) {
         const successMessage =
           response.data.message || "Thank you for RSVPing!";
         setMessage(successMessage);
-        onSubmitSuccess(successMessage);
+        if (typeof onSubmitSuccess === "function") {
+          onSubmitSuccess(successMessage);
+        } else {
+          console.error("onSubmitSuccess is not a function");
+        }
       } else {
         setMessage("Something went wrong with your RSVP.");
       }

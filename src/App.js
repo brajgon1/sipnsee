@@ -8,10 +8,13 @@ import CarouselComponent from './components/Carousel/Carousel';
 
 function App() {
 
+  const handleRSVPSuccess = (message) => {
+    console.log(message);
+  };
 
   return (
     <div className="background">
-      <CarouselComponent/>
+      <CarouselComponent onSubmitSuccess={handleRSVPSuccess} />
     </div>
   );
 }
