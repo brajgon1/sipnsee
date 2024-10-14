@@ -2,7 +2,7 @@
 
 ## Overview
 
-Welcome to the RSVP Application! This single-page application allows users to RSVP for events, providing a seamless experience for event organizers and participants alike. The application features user-friendly interfaces and responsive design, ensuring accessibility across various devices.
+This is my RSVP application! It is a single page app that allows users to RSVP to an event using their email, name and the amount of guests are coming. After clicking the RSVP button, an Email is sent to the user confirming the RSVP and providing a message with information
 
 ## Features
 
