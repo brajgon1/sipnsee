@@ -1,5 +1,5 @@
-*{
-  font-family: 'Spicy Rice', serif;
+* {
+  font-family: "Spicy Rice", serif;
 }
 
 .App {
@@ -41,23 +41,39 @@
   }
 }
 
-
 .background {
-  background-image: url('https://img.freepik.com/premium-photo/autumn-background-with-pumpkins-leaves-wooden-floor-thanksgiving-background-theme_985774-1184.jpg');
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  height: 100vh; 
-  width: 100vw; 
+  background-image: url("https://img.freepik.com/premium-photo/autumn-background-with-pumpkins-leaves-wooden-floor-thanksgiving-background-theme_985774-1184.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  background-attachment: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.content {
+  min-height: 100vh;
+  padding: 20px;
+  z-index: 1;
+  position: relative;
 }
 
 @media (max-width: 768px) {
   .background {
-    background-size: cover; 
-    height: 100vh; 
-    padding: 20px 0; 
+    background-size: cover;
+    background-position: top center;
+
+    .content {
+      padding: 5vh 0;
+    }
   }
 }
 
-
-
+@media (max-width: 768px) {
+  .background {
+    background-size: auto 100%;
+  }
+}
