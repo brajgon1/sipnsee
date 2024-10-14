@@ -22,8 +22,8 @@ const handleRSVP = async (req, res) => {
     const message = `
     <h1>Thank you for RSVPing, ${name}</h1>
     <p>We have received your RSVP for ${guest_count} guest(s)</p>
-    <p>Please let us know if you have any questions or concerns.</p>
     <p>The event is <strong>November 2, 2024</strong> at <strong>4544 W. Harvest Moon Dr. South Jordan, UT 84009 - Conference Room A</strong> from <strong>2:30 PM to 4:30 PM</strong></p>
+    <p>For any questions or concerns, contact Mya at 385-477-7717</p>
     <p>We look forward to seeing you at the Sip & See!</p>
     `;
 
