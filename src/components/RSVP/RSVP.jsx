@@ -7,6 +7,7 @@ function RSVPForm({ onSubmitSuccess }) {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [guestCount, setGuestCount] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,6 +23,7 @@ function RSVPForm({ onSubmitSuccess }) {
         const successMessage =
           response.data.message || "Thank you for RSVPing!";
         setMessage(successMessage);
+        setSubmitted(true);
         if (typeof onSubmitSuccess === "function") {
           onSubmitSuccess(successMessage);
         } else {
@@ -38,38 +40,45 @@ function RSVPForm({ onSubmitSuccess }) {
 
   return (
     <div className="container">
-      <form className="form" onSubmit={handleSubmit}>
-        <div>
-          <input
-            type="text"
-            placeholder="Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
+      {!submitted ? ( // Conditional rendering
+        <form className="form" onSubmit={handleSubmit}>
+          <div>
+            <input
+              type="text"
+              placeholder="Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="number"
+              value={guestCount}
+              onChange={(e) => setGuestCount(Number(e.target.value))}
+              placeholder="Number of guests"
+              min="1"
+              required
+            />
+          </div>
+          <button type="submit">RSVP</button>
+          {message && <p>{message}</p>}
+        </form>
+      ) : (
+        <div className="thank-you-message">
+          <div className="check-mark">&#10004;</div>
+          <h2>Thank you for RSVPing!</h2>
         </div>
-        <div>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <input
-            type="number"
-            value={guestCount}
-            onChange={(e) => setGuestCount(Number(e.target.value))}
-            placeholder="Number of guests"
-            min="1"
-            required
-          />
-        </div>
-        <button type="submit">RSVP</button>
-        {message && <p>{message}</p>}
-      </form>
+      )}
     </div>
   );
 }
