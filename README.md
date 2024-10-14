@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is my RSVP application! It is a single page app that allows users to RSVP to an event using their email, name and the amount of guests are coming. After clicking the RSVP button, an Email is sent to the user confirming the RSVP and providing a message with information
+This is my RSVP application! It is a single page app that allows users to RSVP to an event using their email, name and the amount of guests coming. After clicking the RSVP button, an Email is sent to the user confirming the RSVP and providing a message with information
 
 ## Features
 
