@@ -31,3 +31,32 @@
   line-height: 1.5;
   color: #8B5E3C;
 }
+
+@media (max-width: 768px) {
+  .invitation-title {
+    font-size: 1.5rem;
+  }
+
+  .invitation-details {
+    font-size: 1rem;
+  }
+
+  .invitation-text {
+    padding: 15px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .invitation-title {
+    font-size: 1.2rem;
+  }
+
+  .invitation-details {
+    font-size: 0.9rem;
+  }
+
+  .invitation-text {
+    padding: 10px;
+  }
+}
