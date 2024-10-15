@@ -6,6 +6,7 @@ html {
   align-items: center;
   margin: 0;
   background-color: #fff8e7;
+  overflow: auto;
 }
 
 .container {
@@ -86,6 +87,7 @@ input {
   .form {
     width: 90%;
     padding: 20px;
+    margin: 0 auto;
   }
 
   input {
@@ -94,9 +96,9 @@ input {
   }
 
   button {
-    width: auto;
+    width: 100%;
     padding: 8px 16px;
     font-size: 14px;
-    margin: 0 auto; 
+    margin-top: 10px;
   }
 }

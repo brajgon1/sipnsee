@@ -38,6 +38,7 @@
 
   .carousel img {
     max-height: 500px;
+    width: 100%;
   }
 }
 
