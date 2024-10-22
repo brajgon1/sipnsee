@@ -1,5 +1,3 @@
-
-
 .container {
   display: flex;
   align-items: center;
@@ -29,7 +27,7 @@
   font-size: 1.2rem;
   font-weight: normal;
   line-height: 1.5;
-  color: #8B5E3C;
+  color: #8b5e3c;
 }
 
 @media (max-width: 768px) {
@@ -42,8 +40,12 @@
   }
 
   .invitation-text {
-    padding: 15px;
-    max-width: 90%;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .container {
+    margin-top: 20px;
   }
 }
 
@@ -58,5 +60,9 @@
 
   .invitation-text {
     padding: 10px;
+    font-size: 0.8rem;
+  }
+  .container {
+    margin-top: 20px;
   }
 }
