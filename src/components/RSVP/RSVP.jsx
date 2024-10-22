@@ -2,83 +2,14 @@ import { useState } from "react";
 import axios from "axios";
 import "./RSVP.css";
 
-function RSVPForm({ onSubmitSuccess }) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [guestCount, setGuestCount] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const response = await axios.post("http://localhost:4005/rsvp", {
-        name,
-        email,
-        guest_count: guestCount,
-      });
-
-      if (response.status === 201) {
-        const successMessage =
-          response.data.message || "Thank you for RSVPing!";
-        setMessage(successMessage);
-        setSubmitted(true);
-        if (typeof onSubmitSuccess === "function") {
-          onSubmitSuccess(successMessage);
-        } else {
-          console.error("onSubmitSuccess is not a function");
-        }
-      } else {
-        setMessage("Something went wrong with your RSVP.");
-      }
-    } catch (error) {
-      console.error("Error submitting RSVP:", error);
-      setMessage("Failed to send RSVP");
-    }
-  };
-
+function RSVPForm() {
   return (
     <div className="container">
-      {!submitted ? ( // Conditional rendering
-        <form className="form" onSubmit={handleSubmit}>
-          <div>
-            <input
-              type="text"
-              placeholder="Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <input
-              type="number"
-              value={guestCount}
-              onChange={(e) => setGuestCount(Number(e.target.value))}
-              placeholder="Number of guests"
-              min="1"
-              required
-            />
-          </div>
-          <button type="submit">RSVP</button>
-          {message && <p>{message}</p>}
-        </form>
-      ) : (
-        <div className="thank-you-message">
-          <div className="check-mark">&#10004;</div>
-          <h2>Thank you for RSVPing!</h2>
-        </div>
-      )}
+      <div className="invitation-text">
+        <h2>RSVP Information</h2>
+        <p>Please RSVP by texting or calling: <strong>385-309-7172</strong></p>
+        <p>Please include your name, email address, and preferred party size.</p>
+      </div>
     </div>
   );
 }
