@@ -9,12 +9,16 @@ html {
   overflow: auto;
 }
 
+p {
+  color: #8b5e3c;
+}
+
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  
 }
 
 button {
